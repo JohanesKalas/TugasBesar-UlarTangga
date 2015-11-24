@@ -112,11 +112,20 @@ class Board:
 	def getPlayer():
 		return self.player
 		
+"""                 
+Kelas ini merepresentasikan sebuah tangga yang membantu player memenangkan permainan lebih cepat.
+"""
 class Ladder():
-	#board = Board()
     player = ''
+    """
+    Konstruktor untuk kelas Ladder, mengisi atribut player.
+    """
     def __init__(self, player):
         self.player = player
+    """
+    Setter untuk mengupdate posisi player bila player berhenti di tile dimana ada kaki tangga.
+    parameter rules untuk menentukan aturan tangga yang mana yang digunakan
+    """
     def setPosition(self, rules):
         getPosisi = self.player.getPosition()
         if rules == 1 :
@@ -202,7 +211,12 @@ class Ladder():
             elif getPosisi == 88:
                 self.player.setPosition(92)
                 print("Tangga naik ke ",self.player.getPosition())
-    def printRules(self,rules):
+                
+    """
+    method untuk mengeprint aturan tangga mana yang dipakai, dan apa saja aturannya
+    parameter rules untuk aturan ke berapa yang dipakai melalui random
+    """
+    def printRules(selfself,rules):
         if rules == 1:
             print("Tangga ada pada diposisi :")
             print("7 naik ke 36")
@@ -240,94 +254,105 @@ class Ladder():
             print("62 naik ke 83")
             print("88 naik ke 92")
         
+"""
+Konstruktor untuk kelas Snake, mengisi atribut player.
+"""
 class Snake():
-	#board = Board()
     player = ''
+    """
+    Konstruktor untuk kelas Snake, mengisi atribut player.
+    """
     def __init__(self,player):
         self.player = player
-        #self.board.setPlayer(player)
+    """
+    Setter untuk mengupdate posisi player bila player berhenti di tile dimana ada kepala ular.
+    """
     def setPosition(self, rules):
         getPosition = self.player.getPosition()
         if rules == 1:
             if getPosition == 97:
                 self.player.setPosition(66)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 89:
                 self.player.setPosition(5)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 64:
                 self.player.setPosition(23)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 49:
                 self.player.setPosition(13)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
         elif rules == 2:
             if getPosition == 97:
                 self.player.setPosition(79)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 89:
                 self.player.setPosition(5)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 64:
                 self.player.setPosition(23)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 49:
                 self.player.setPosition(13)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
         elif rules == 3:
             if getPosition == 96:
                 self.player.setPosition(88)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 86:
                 self.player.setPosition(63)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 54:
                 self.player.setPosition(14)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 61:
                 self.player.setPosition(29)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 26:
                 self.player.setPosition(3)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
         elif rules == 4:
             if getPosition == 91:
                 self.player.setPosition(72)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 87:
                 self.player.setPosition(68)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 63:
                 self.player.setPosition(42)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 50:
                 self.player.setPosition(32)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 53:
                 self.player.setPosition(35)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 19:
                 self.player.setPosition(4)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
         elif rules == 5:
             if getPosition == 99:
                 self.player.setPosition(52)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 93:
                 self.player.setPosition(72)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 63:
                 self.player.setPosition(20)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 25:
                 self.player.setPosition(17)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 50:
                 self.player.setPosition(28)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
             elif getPosition == 45:
                 self.player.setPosition(7)
-                print("Tangga turun ke ", self.player.getPosition())
+                print("Ular turun ke ", self.player.getPosition())
+    """
+    method untuk mengeprint aturan ular mana yang dipakai, dan apa saja aturannya
+    parameter rules untuk aturan ke berapa yang dipakai melalui random
+    """
     def printRules(self,rules):
         if rules == 1:
             print("Ular ada pada diposisi :")
