@@ -27,46 +27,91 @@ class Dice:
                 self.mataDadu = random.randint(1,6)
                 return self.mataDadu
             
+"""
+Kelas ini merepresentasikan sebuah kotak pada Board.
+"""
 class Tile:
-	player = ''
-	ladderAwal = ''
+	player = '' # atribut yang menyimpan siapa player yang sedang berada di tile tersebut. 
+	ladderAwal = ''  
 	snakeAwal = ''
+	"""
+	Getter untuk player. 
+	"""
 	def getPlayer(self):
 		return self.player
+	"""
+	Setter untuk player.
+	"""
 	def setPlayer(self, player):
 		self.player = player
+	"""
+	Getter untuk ladderAwal.
+	"""
 	def getLadderAwal(self):
 		return self.ladderAwal
+	"""
+	Setter untuk ladderAwal.
+	"""
 	def setLadderAwal(self, ladderAwal):
 		self.ladderAwal = ladderAwal
+	"""
+	Getter untuk snakeAwal.
+	"""
 	def getSnakeAwal(self):
 		return self.snakeAwal
+	"""
+	Setter untuk snakeAwal.
+	"""
 	def setSnakeAwal(self, snakeAwal):
 		self.snakeAwal = snakeAwal
 
+"""
+Kelas ini merepresentasikan sebuah papan kotak-kotak dimana permainan berlangsung.
+"""
 class Board:
-	tile = [""]
-	posisiPlayer = 0
-	player = ""
-	mataDadu = 0
+	tile = [""] # atribut untuk membuat papan permainan yang terdiri dari tile-tile.
+	posisiPlayer = 0 # atribut untuk menyimpan posisi player.
+	player = "" # atribut yang menyimpan kelas Player.
+	mataDadu = 0 # atribut untuk menyimpan nilai mataDadu.
+	"""
+	Konstruktor untuk kelas Board, menginisialisasi array of Tile dan menset posisi player pada Tile pertama.
+	"""
 	def __init__(self):
             self.tile = range(1,101)
             self.posisiPlayer = 0
+   
+        """
+        Method untuk mengisi atribut player yang bermain didalam game.
+        """
 	def setPlayer(self,player):
             self.player = player
+
+        """
+        Method untuk menempatkan player pada posisi yang didapat setelah me-roll dice.
+        """
 	def setPosition(self,x):
             self.posisiPlayer = self.player.getPosition() + x
             if(self.posisiPlayer > 100):
                 m = self.posisiPlayer - 100
                 self.posisiPlayer = 100 - m
             self.player.setPosition(self.posisiPlayer)
+    
+        """
+        Method yang memanggil method getMataDadu() (roll dice) milik kelas Dice lalu mengisikan hasilnya ke atribut mataDadu milik kelas ini.
+        """
 	def setMataDadu(self,dice):
 		self.mataDadu = dice.getMataDadu()
+	"""
+	Getter untuk atribut mataDadu milik kelas ini.
+	"""
 	def getMataDadu(self):
 		return self.mataDadu
+	"""
+	Getter untuk atribut player.
+	"""
 	def getPlayer():
 		return self.player
-           
+		
 class Ladder():
 	#board = Board()
     player = ''
