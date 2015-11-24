@@ -79,38 +79,42 @@ class Board:
 	def __init__(self):
             self.tile = range(1,101)
             self.posisiPlayer = 0
-   
-        """
-        Method untuk mengisi atribut player yang bermain didalam game.
-        """
+        
 	def setPlayer(self,player):
+            """
+            Method untuk mengisi atribut player yang bermain didalam game.
+            """
             self.player = player
 
-        """
-        Method untuk menempatkan player pada posisi yang didapat setelah me-roll dice.
-        """
+        
 	def setPosition(self,x):
+            """
+            Method untuk menempatkan player pada posisi yang didapat setelah me-roll dice.
+            """
             self.posisiPlayer = self.player.getPosition() + x
             if(self.posisiPlayer > 100):
                 m = self.posisiPlayer - 100
                 self.posisiPlayer = 100 - m
             self.player.setPosition(self.posisiPlayer)
     
-        """
-        Method yang memanggil method getMataDadu() (roll dice) milik kelas Dice lalu mengisikan hasilnya ke atribut mataDadu milik kelas ini.
-        """
+        
 	def setMataDadu(self,dice):
-		self.mataDadu = dice.getMataDadu()
-	"""
-	Getter untuk atribut mataDadu milik kelas ini.
-	"""
+            """
+            Method yang memanggil method getMataDadu() (roll dice) milik kelas Dice lalu mengisikan hasilnya ke atribut mataDadu milik kelas ini.
+            """
+            self.mataDadu = dice.getMataDadu()
+	
 	def getMataDadu(self):
-		return self.mataDadu
-	"""
-	Getter untuk atribut player.
-	"""
+            """
+            Getter untuk atribut mataDadu milik kelas ini.
+            """
+            return self.mataDadu
+	
 	def getPlayer():
-		return self.player
+            """
+            Getter untuk atribut player.
+            """
+            return self.player
 		
 """                 
 Kelas ini merepresentasikan sebuah tangga yang membantu player memenangkan permainan lebih cepat.
